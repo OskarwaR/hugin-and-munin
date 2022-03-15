@@ -1168,16 +1168,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 268439837}
     m_Modifications:
     - target: {fileID: 2929252283123773937, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: be57e3c5af09eaf42b2a940e2805fbd8, type: 3}
+    - target: {fileID: 2929252283123773937, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_Color.b
-      value: 0.7264151
+      value: 0.019607844
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773937, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_Color.g
-      value: 0.7264151
+      value: 0.21568628
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773937, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_Color.r
-      value: 0.7264151
+      value: 0.21568628
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_Pivot.x
@@ -1640,6 +1644,7 @@ MonoBehaviour:
   - {fileID: 1183905458019597550, guid: 739349f7a094b2f45bd06b5e6bbe6734, type: 3}
   - {fileID: 7644319274275932281, guid: a03183ed361c3604ba49f97ef7c31f54, type: 3}
   - {fileID: 8819576750444441678, guid: 297949f45ab634046b0749a6ef4c82e1, type: 3}
+  runasTemp: []
 --- !u!1 &870458571
 GameObject:
   m_ObjectHideFlags: 0
@@ -2099,7 +2104,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   android: 1
   gameOver: 0
-  velocidadJuego: 1
+  velocidadJuego: 0
+  velocidadJuegoBase: 0.5
+  velocidadJuegoT1: 1
+  velocidadJuegoT2: 1.75
+  velocidadJuegoT3: 2.5
+  intervalo: 0
+  intervalo1: 4
+  intervalo2: 3
+  intervalo3: 2
   runasObtenidas: 0
   valorRuna: 1
   tier1: 16
@@ -2550,16 +2563,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 268439837}
     m_Modifications:
     - target: {fileID: 2929252283123773937, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: be57e3c5af09eaf42b2a940e2805fbd8, type: 3}
+    - target: {fileID: 2929252283123773937, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_Color.b
-      value: 0.7264151
+      value: 0.78431374
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773937, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_Color.g
-      value: 0.7264151
+      value: 0.78431374
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773937, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_Color.r
-      value: 0.7264151
+      value: 0.78431374
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_Pivot.x
@@ -2653,6 +2670,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 3a74f678ee8f3bd49aacf3de1ae4bcaa, type: 3}
+    - target: {fileID: 2929252285020698103, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
 --- !u!1 &1770518181
