@@ -113,7 +113,7 @@ public class Player : MonoBehaviour
     private static void CogerRuna(Collider2D collision)
     {
         GameManager.instance.runasObtenidas += GameManager.instance.valorRuna;
-        Destroy(collision.gameObject);
+        collision.GetComponent<Runa>().StartCoroutine(collision.GetComponent<Runa>().Fade());
     }
 
     private void PajaroMuerto()

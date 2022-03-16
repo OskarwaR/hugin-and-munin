@@ -21,8 +21,8 @@ public class GameManager : MonoBehaviour
     [Space][Space]
     public int runasObtenidas = 0;
     public int valorRuna = 1;
-    public int tier1 = 16;
-    public int tier2 = 35;
+    public int tier2 = 16;
+    public int tier3 = 35;
 
     private void Awake()
     {
@@ -36,18 +36,18 @@ public class GameManager : MonoBehaviour
 
     private void RunasObtenidas()
     {
-        if (runasObtenidas <= tier1)
+        if (runasObtenidas <= tier2)
         {
             valorRuna = 1;
             velocidadJuego = velocidadJuegoBase + velocidadJuegoT1;
             intervalo = intervalo1;
         }
-        else if (runasObtenidas > tier1 && runasObtenidas <= tier2)
+        else if (runasObtenidas > tier2 && runasObtenidas <= tier3)
         {
             valorRuna = 2;
             if (velocidadJuego < (velocidadJuegoBase + velocidadJuegoT2))
             {
-                velocidadJuego += 0.1f * Time.deltaTime;
+                velocidadJuego += 0.2f * Time.deltaTime;
                 if (velocidadJuego > (velocidadJuegoBase + velocidadJuegoT2))
                     velocidadJuego = velocidadJuegoBase + velocidadJuegoT2;
             }
@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
             valorRuna = 3;
             if (velocidadJuego < (velocidadJuegoBase + velocidadJuegoT3))
             {
-                velocidadJuego += 0.1f * Time.deltaTime;
+                velocidadJuego += 0.2f * Time.deltaTime;
                 if (velocidadJuego > (velocidadJuegoBase + velocidadJuegoT3))
                     velocidadJuego = velocidadJuegoBase + velocidadJuegoT3;
             }
