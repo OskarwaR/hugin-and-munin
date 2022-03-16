@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     Vector2 movement;
     Vector2 newPos;
 
+    public bool muerto = false;
+
     private void Awake()
     {
         rb=GetComponent<Rigidbody2D>();
@@ -53,6 +55,8 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (muerto) return;
+
         newPos = rb.position + movement * moveSpeed * Time.fixedDeltaTime;
         ComprobarLimites();
 
@@ -118,6 +122,22 @@ public class Player : MonoBehaviour
 
     private void PajaroMuerto()
     {
-        Destroy(this.gameObject);
+        if(!muerto)
+        {
+            muerto = true;
+            rb.gravityScale = 1f;
+            GameManager.instance.players--;
+            GameManager.instance.GameOver();
+            StartCoroutine(Morir());
+        } 
+    }
+
+    IEnumerator Morir()
+    {
+        while(true)
+        {
+            transform.Rotate(0, 0, -200 * Time.deltaTime);
+            yield return null;
+        }
     }
 }

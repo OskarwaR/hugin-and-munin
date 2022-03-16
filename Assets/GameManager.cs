@@ -1,28 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public bool android;
     public bool gameOver = false;
-    [Space][Space]
+    [Space(10)]
+    [Header("Velocidad del juego segun el nivel")]
     public float velocidadJuego = 0;
     public float velocidadJuegoBase = 0.5f;
     public float velocidadJuegoT1 = 1;
     public float velocidadJuegoT2 = 1.75f;
     public float velocidadJuegoT3 = 2.5f;
-    [Space][Space]
+    [Space(10)]
+    [Header("Intervalo de aparicion de runas en segundos")]
     public float intervalo = 0;
     public float intervalo1 = 4f;
     public float intervalo2 = 3f;
     public float intervalo3 = 2f;
-    [Space][Space]
+    [Space(10)]
+    [Header("Runas necesarias para aunmentar el nivel")]
     public int runasObtenidas = 0;
     public int valorRuna = 1;
     public int tier2 = 16;
     public int tier3 = 35;
+
+    [HideInInspector]
+    public int players = 2;
 
     private void Awake()
     {
@@ -64,5 +71,17 @@ public class GameManager : MonoBehaviour
             }
             intervalo = intervalo3;
         }
+    }
+
+    public void GameOver()
+    {
+        if (players == 0)
+            StartCoroutine(Reset());
+    }
+
+    IEnumerator Reset()
+    {
+        yield return new WaitForSecondsRealtime(3);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
