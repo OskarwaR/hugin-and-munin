@@ -541,6 +541,7 @@ MonoBehaviour:
   player2: 1
   moveSpeed: 3
   muerto: 0
+  inmune: 0
 --- !u!212 &165631654
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1024,7 +1025,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 378245387}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 1.37, z: 1.6082476}
+  m_LocalPosition: {x: 8.26, y: 1.37, z: 1.6082476}
   m_LocalScale: {x: 0.12098, y: 0.12098, z: 0.12098}
   m_Children: []
   m_Father: {fileID: 1913228106}
@@ -1176,15 +1177,15 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: be57e3c5af09eaf42b2a940e2805fbd8, type: 3}
     - target: {fileID: 2929252283123773937, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_Color.b
-      value: 0.019607844
+      value: 0.1981132
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773937, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_Color.g
-      value: 0.21568628
+      value: 0.1981132
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773937, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_Color.r
-      value: 0.21568628
+      value: 0.1981132
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_Pivot.x
@@ -1542,7 +1543,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 592770598}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.9, y: -14.3, z: 20}
+  m_LocalPosition: {x: -2.9, y: -12.37, z: 20}
   m_LocalScale: {x: 33.89004, y: 6.226269, z: 1}
   m_Children: []
   m_Father: {fileID: 2115891310}
@@ -2442,18 +2443,19 @@ MonoBehaviour:
   android: 1
   gameOver: 0
   velocidadJuego: 0
-  velocidadJuegoBase: 0.5
-  velocidadJuegoT1: 1
-  velocidadJuegoT2: 1.75
-  velocidadJuegoT3: 2.5
+  velocidadJuegoBase: 1.5
+  velocidadJuegoT1: 1.5
+  velocidadJuegoT2: 3
+  velocidadJuegoT3: 4.5
   intervalo: 0
-  intervalo1: 4
-  intervalo2: 3
-  intervalo3: 2
+  intervalo1: 2
+  intervalo2: 1.5
+  intervalo3: 1
   runasObtenidas: 0
   valorRuna: 1
-  tier2: 16
-  tier3: 35
+  tier2: 10
+  tier3: 30
+  vidas: 3
   players: 2
 --- !u!4 &1282498088
 Transform:
@@ -3229,7 +3231,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1791345402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5, y: 1.37, z: 1.6082476}
+  m_LocalPosition: {x: -2.76, y: 1.37, z: 1.6082476}
   m_LocalScale: {x: 0.12098, y: 0.12098, z: 0.12098}
   m_Children: []
   m_Father: {fileID: 1913228106}
@@ -3496,6 +3498,7 @@ MonoBehaviour:
   player2: 0
   moveSpeed: 3
   muerto: 0
+  inmune: 0
 --- !u!95 &2132305829
 Animator:
   serializedVersion: 3

@@ -23,6 +23,7 @@ public class Runa : MonoBehaviour
 
     public IEnumerator Fade()
     {
+        GetComponent<Collider2D>().enabled = false;
         activa = false;
         float a=1f;
         transform.position = new Vector3(transform.position.x,transform.position.y,-11);
@@ -36,5 +37,3 @@ public class Runa : MonoBehaviour
         Destroy(this.gameObject);
     }
 }
-
-

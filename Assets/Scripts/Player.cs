@@ -15,16 +15,24 @@ public class Player : MonoBehaviour
     float verticalMove;
     Vector2 movement;
     Vector2 newPos;
+    SpriteRenderer sprite;
 
     public bool muerto = false;
+    public bool inmune = false;
 
     private void Awake()
     {
-        rb=GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
     {
+        if(GameManager.instance.gameOver)
+        {
+            StartCoroutine(Morir());
+            return;
+        }
         Controles();
     }
 
@@ -84,7 +92,7 @@ public class Player : MonoBehaviour
         {
             if(collision.CompareTag("Roja"))
             {
-                PajaroMuerto();
+                RestarVida();
             }
             else
             {
@@ -96,7 +104,7 @@ public class Player : MonoBehaviour
                     }
                     else
                     {
-                        PajaroMuerto();
+                        RestarVida();
                     }
                 }
                 else if(player2)
@@ -107,7 +115,7 @@ public class Player : MonoBehaviour
                     }
                     else
                     {
-                        PajaroMuerto();
+                        RestarVida();
                     }
                 }
             }
@@ -120,24 +128,51 @@ public class Player : MonoBehaviour
         collision.GetComponent<Runa>().StartCoroutine(collision.GetComponent<Runa>().Fade());
     }
 
-    private void PajaroMuerto()
+    void RestarVida()
     {
-        if(!muerto)
+        if (inmune) return;
+        inmune = true;
+        GameManager.instance.vidas--;
+        GameManager.instance.GameOver();
+        StartCoroutine(Parpadeo(3));
+    }
+
+    public IEnumerator Parpadeo(int n)
+    {
+        float a = 1f;
+        int i = 0;
+        while(i<=n)
+        {
+            while (a > 0.5)
+            {
+                a -= 3*Time.deltaTime;
+                sprite.color = new Color(1f, 1f, 1f, a);
+                yield return null;
+            }
+            while (a < 1)
+            {
+                a += 3*Time.deltaTime;
+                sprite.color = new Color(1f, 1f, 1f, a);
+                yield return null;
+            }
+            i++;
+            yield return null;
+        }
+        inmune = false;
+    }
+
+    public IEnumerator Morir()
+    {
+        if (!muerto)
         {
             muerto = true;
             rb.gravityScale = 1f;
-            GameManager.instance.players--;
-            GameManager.instance.GameOver();
-            StartCoroutine(Morir());
-        } 
-    }
-
-    IEnumerator Morir()
-    {
-        while(true)
-        {
-            transform.Rotate(0, 0, -200 * Time.deltaTime);
-            yield return null;
+        
+            while (true)
+            {
+                transform.Rotate(0, 0, -200 * Time.deltaTime);
+                yield return null;
+            }
         }
     }
 }

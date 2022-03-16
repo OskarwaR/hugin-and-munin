@@ -27,6 +27,9 @@ public class GameManager : MonoBehaviour
     public int valorRuna = 1;
     public int tier2 = 16;
     public int tier3 = 35;
+    [Space(10)]
+    [Header("Control de vidas")]
+    public int vidas = 3;
 
     [HideInInspector]
     public int players = 2;
@@ -75,12 +78,16 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        if (players == 0)
+        if (vidas <= 0)
+        {
             StartCoroutine(Reset());
+        }
+            
     }
 
     IEnumerator Reset()
     {
+        gameOver = true;
         yield return new WaitForSecondsRealtime(3);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
