@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     [Space(10)]
     [Header("Control de vidas")]
     public int vidas = 3;
+    public GameObject[] spritesVidas;
 
     [HideInInspector]
     public int players = 2;

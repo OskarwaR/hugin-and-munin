@@ -132,6 +132,7 @@ public class Player : MonoBehaviour
     {
         if (inmune) return;
         inmune = true;
+        Destroy(GameManager.instance.spritesVidas[GameManager.instance.vidas - 1]);
         GameManager.instance.vidas--;
         GameManager.instance.GameOver();
         StartCoroutine(Parpadeo(3));
@@ -167,6 +168,7 @@ public class Player : MonoBehaviour
         {
             muerto = true;
             rb.gravityScale = 1f;
+            GetComponent<Collider2D>().enabled = false;
         
             while (true)
             {
