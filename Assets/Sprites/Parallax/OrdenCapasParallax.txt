@@ -1,0 +1,18 @@
+Desde más atrás a más adelante
+
+1-Sky
+	Estirar hasta que ocupe el ancho de la pantalla
+	Es un parallax vertical para que se vea el paso del tiempo
+2-Pinetrees
+	Oscurecer
+	Parallax horizontal
+3-Mountains
+	Tamaño del ancho de la pantalla
+	Parallax horizontal
+4-Pinetrees
+	Estirar lo que sea conveniente (es una imagen de 6000px, por lo que se puede desplazar por offset para que "haya aleatoriedad")
+	Parallax horizontal
+	Duplicar capas para crear profundidad
+5-Clouds
+	Recorte inteligente para tener un sprite de cada nube
+	añadir opacidad (en los programas de Adobe con un 50-65% es suficiente siendo 100% totalmente visible. Si no convence, hacer un script de 		random.range para que la opacidad sea aleatoria)

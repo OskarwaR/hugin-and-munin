@@ -6,6 +6,9 @@ public class Destructor : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("Cloud"))
+            SpawnManagerClouds.instance.NewCloud(collision.GetComponent<Cloud>().back);
+
         Destroy(collision.gameObject);
     }
 }
