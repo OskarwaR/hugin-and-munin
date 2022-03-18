@@ -8,6 +8,7 @@ public class Parallax : MonoBehaviour
     float value;
 
     public bool horizontal = true;
+    public bool aleatorio = false;
 
     [SerializeField] float parallaxVelocity;
     
@@ -18,6 +19,9 @@ public class Parallax : MonoBehaviour
             value = rend.material.mainTextureOffset.x;
         else
             value = rend.material.mainTextureOffset.y;
+
+        if (aleatorio)
+            value = Random.Range(0f, 1f);
     }
 
     void Update()

@@ -16,6 +16,9 @@ public class Player : MonoBehaviour
     Vector2 movement;
     Vector2 newPos;
     SpriteRenderer sprite;
+    AudioSource audioSource;
+    public AudioClip hit;
+    public AudioClip runa;
 
     public bool muerto = false;
     public bool inmune = false;
@@ -24,6 +27,7 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -122,9 +126,13 @@ public class Player : MonoBehaviour
         }
     }
 
-    private static void CogerRuna(Collider2D collision)
+    public void CogerRuna(Collider2D collision)
     {
         GameManager.instance.runasObtenidas += GameManager.instance.valorRuna;
+
+        audioSource.pitch = Random.Range(0.9f, 1.1f);
+        audioSource.PlayOneShot(runa);
+
         collision.GetComponent<Runa>().StartCoroutine(collision.GetComponent<Runa>().Fade());
     }
 
@@ -134,6 +142,10 @@ public class Player : MonoBehaviour
         inmune = true;
         Destroy(GameManager.instance.spritesVidas[GameManager.instance.vidas - 1]);
         GameManager.instance.vidas--;
+
+        audioSource.pitch = Random.Range(0.9f, 1.1f);
+        audioSource.PlayOneShot(hit);
+
         GameManager.instance.GameOver();
         StartCoroutine(Parpadeo(3));
     }
