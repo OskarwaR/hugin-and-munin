@@ -40,6 +40,11 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
+    private void Start()
+    {
+        Time.timeScale = 0;
+    }
+
     private void Update()
     {
         RunasObtenidas();
@@ -89,7 +94,9 @@ public class GameManager : MonoBehaviour
     IEnumerator Reset()
     {
         gameOver = true;
+        DataManager.instance.runas += GameManager.instance.runasObtenidas;
+        DataManager.instance.Save();
         yield return new WaitForSecondsRealtime(3);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("midgardMenu");
     }
 }

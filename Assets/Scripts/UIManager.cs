@@ -6,13 +6,19 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public Text runas;
-    public Text valor;
-    public Text nivel;
+    public GameObject controles;
+    public AudioSource music;
 
+    
     void Update()
     {
-        runas.text = "Runas: " + GameManager.instance.runasObtenidas.ToString();
-        valor.text = "Valor Runa: " + GameManager.instance.valorRuna.ToString();
-        nivel.text = "Nivel: " + GameManager.instance.runasObtenidas.ToString();
+        runas.text = GameManager.instance.runasObtenidas.ToString();
+    }
+
+    public void StartGame()
+    {
+        music.Play();
+        controles.active = false;
+        Time.timeScale = 1;
     }
 }

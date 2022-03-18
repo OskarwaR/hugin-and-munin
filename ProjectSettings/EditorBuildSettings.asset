@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/startMenu.unity
+    guid: b0af95d8e0fa2b5418acc3a09e873341
+  - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/mainMenu.unity
+    guid: e75b2685b5a3bcb46a2d0106478efe8c
+  - enabled: 1
+    path: Assets/Scenes/midgardGameMenu.unity
+    guid: b0d83f3deda01e5428efb82a1bd3f5ec
+  - enabled: 1
+    path: Assets/Scenes/midgardMenu.unity
+    guid: 8597588bb3b55a9429669f4727a9d294
   m_configObjects: {}
