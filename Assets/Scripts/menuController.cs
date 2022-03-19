@@ -17,28 +17,33 @@ public class menuController : MonoBehaviour
 
     public void startMenu()
     {
+        UISound.instance.Reproducir(UISound.instance.rechazar);
         SceneManager.LoadScene("mainMenu");
     }
 
     public void QuitGame()
     {
+        UISound.instance.Reproducir(UISound.instance.rechazar);
         Application.Quit();
     }
 
     public void midgard()
     {
         //Aquí va la escena del juego
+        UISound.instance.Reproducir(UISound.instance.aceptar);
         SceneManager.LoadScene("midgardMenu");
     }
 
     public void Scene1()
     {
         //Aquí va la escena del juego
+        UISound.instance.Reproducir(UISound.instance.aceptar);
         SceneManager.LoadScene("Game");
     }
 
     public void HideMenu()
     {
+        UISound.instance.Reproducir(UISound.instance.aceptar);
         menu.active = false;
     }
 }

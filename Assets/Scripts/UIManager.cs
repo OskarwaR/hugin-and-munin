@@ -18,6 +18,7 @@ public class UIManager : MonoBehaviour
     public void StartGame()
     {
         music.Play();
+        UISound.instance.Reproducir(UISound.instance.aceptar);
         controles.active = false;
         Time.timeScale = 1;
     }
